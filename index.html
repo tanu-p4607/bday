@@ -1,101 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise 🎂</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-        body{
-            background:linear-gradient(135deg,#ff9ecf,#ffd6e8);
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            overflow:hidden;
-        }
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9ecf,#ffd6e8);
+overflow:hidden;
+}
 
-        .card{
-            background:white;
-            width:90%;
-            max-width:500px;
-            padding:40px;
-            border-radius:25px;
-            text-align:center;
-            box-shadow:0 15px 40px rgba(0,0,0,.2);
-        }
+.container{
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+max-width:500px;
+width:90%;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
 
-        h1{
-            color:#ff4081;
-            font-size:40px;
-        }
+h1{
+color:#ff4081;
+margin-bottom:20px;
+}
 
-        p{
-            margin-top:20px;
-            font-size:20px;
-            color:#555;
-            line-height:1.6;
-        }
+input{
+width:100%;
+padding:15px;
+font-size:18px;
+border-radius:10px;
+border:2px solid #ff9ecf;
+margin-top:15px;
+outline:none;
+}
 
-        button{
-            margin-top:30px;
-            padding:15px 30px;
-            border:none;
-            border-radius:30px;
-            background:#ff4081;
-            color:white;
-            font-size:18px;
-            cursor:pointer;
-        }
+button{
+margin-top:20px;
+padding:15px 30px;
+font-size:18px;
+background:#ff4081;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
 
-        button:hover{
-            background:#e91e63;
-        }
+button:hover{
+background:#e91e63;
+}
 
-        #message{
-            display:none;
-        }
-    </style>
+#error{
+color:red;
+margin-top:15px;
+}
+
+#surprise{
+display:none;
+}
+
+</style>
+
 </head>
-
 <body>
 
-<div class="card">
+<div class="container">
 
-<div id="start">
+<div id="login">
 
-<h1>🎁</h1>
+<h1>🎁 Birthday Surprise 🎁</h1>
 
-<h2>A Special Surprise</h2>
+<p>This surprise is only for one special person.</p>
 
-<p>Click below to open your birthday gift.</p>
+<input
+type="password"
+id="password"
+placeholder="Enter Secret Code">
 
-<button onclick="showWish()">Open Gift 🎂</button>
+<button onclick="checkPassword()">Unlock ❤️</button>
+
+<p id="error"></p>
 
 </div>
 
-<div id="message">
+<div id="surprise">
 
-<h1>🎉 Happy Birthday dii 🎉</h1>
+<h1>🎉 HAPPY BIRTHDAY! 🎉</h1>
 
-<p>
+<h2>❤️ Dear Bestie ❤️</h2>
 
-Dear sister ❤️<br><br>
+<p style="margin-top:20px;font-size:20px;line-height:1.8;color:#555;">
 
 Wishing you endless happiness, laughter and success.<br><br>
 
-Thank you for always being by my side. I wish you are always worried about me<br><br>
+Thank you for always being there for me.<br><br>
 
-May you be dogie sis in every lifetime! ✨<br><br>
+May all your dreams come true.<br><br>
 
-Lots of love ❤️
+Have the most amazing birthday ever! 🎂✨
 
 </p>
 
@@ -104,10 +118,24 @@ Lots of love ❤️
 </div>
 
 <script>
-function showWish(){
-document.getElementById("start").style.display="none";
-document.getElementById("message").style.display="block";
+
+function checkPassword(){
+
+let pass=document.getElementById("password").value;
+
+if(pass==="bestie2026"){
+
+document.getElementById("login").style.display="none";
+document.getElementById("surprise").style.display="block";
+
+}else{
+
+document.getElementById("error").innerHTML="❌ Wrong Secret Code";
+
 }
+
+}
+
 </script>
 
 </body>
